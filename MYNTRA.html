@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="MYNTRA.css" />
+</head>
+<body>
+    <div class="header">
+        <div class="headerLeft">
+            <div class="logo">
+                <img src="images/OIP.jpg" height="55">
+            </div>
+
+            <div class="menu">
+                <ul>
+                  <li><a href="#" onclick="event.preventDefault(); displayProducts(products)">ALL</a></li>
+<li><a href="#" onclick="event.preventDefault(); filterCategory('men')">MEN</a></li>
+<li><a href="#" onclick="event.preventDefault(); filterCategory('women')">WOMEN</a></li>
+<li><a href="#" onclick="event.preventDefault(); filterCategory('kids')">KIDS</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="headerRight">
+            <form>
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <input type="text" placeholder="search">
+            </form>
+
+            <div class="profile">
+                <ul>
+                    <li onclick="openPanel('profilePanel')">
+                        <i class="fa-regular fa-user"></i>
+                        <b>profile</b>
+                    </li>
+                    <li onclick="openPanel('wishlistPanel')">
+                        <i class="fa-regular fa-heart"></i>
+                        <b>wishlist(<span id="wishlistCount">0</span>)</b>
+
+                    </li>
+                    <li onclick="openPanel('cartPanel')">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <b>Bag (<span id="count">0</span>)</b>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img id="slider" src="images/Images-1.webp">
+    </div>
+
+    <div class="brandSection">
+        <h2>MEDAL WORTHY BRAND TO BAG</h2>
+
+        <div class="sort-buttons">
+            <button onclick="filterUnder500()">Under ₹500</button>
+<button onclick="displayProducts(products)">Show All</button>
+        </div>
+
+        <div class="brandRow"></div>
+    </div>
+    <div class="overlay" id="overlay" onclick="closePanels()"></div>
+
+<div class="side-panel" id="cartPanel">
+  <div class="panel-header"><h3>My Bag</h3><button class="close-btn" onclick="closePanels()">&times;</button></div>
+  <div class="panel-body" id="cartPanelBody"></div>
+  <div class="panel-footer">Total: <span id="cartTotal">₹0</span></div>
+</div>
+
+<div class="side-panel" id="wishlistPanel">
+  <div class="panel-header"><h3>My Wishlist</h3><button class="close-btn" onclick="closePanels()">&times;</button></div>
+  <div class="panel-body" id="wishlistPanelBody"></div>
+</div>
+
+    <script src="MYNTRA.js"></script>
+
+</body>
+</html>
